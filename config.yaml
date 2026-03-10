@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  read_timeout: 15s
+  write_timeout: 15s
+  idle_timeout: 60s
+
+database:
+  dsn: "postgres://taskuser:taskpass@localhost:5432/taskdb?sslmode=disable"
+  max_open_conns: 25
+  max_idle_conns: 10
+  conn_max_lifetime: 5m
+
+redis:
+  addr: "localhost:6379"
+  password: ""
+  db: 0
+
+jwt:
+  secret: "change-me-in-production-use-env-var"
+  expiration: 24h
+
+cache:
+  task_ttl: 5m
+
+rate_limit:
+  requests_per_minute: 100
+
+email:
+  service_url: "http://mock-email-service:8081"
+  timeout: 5s
+  max_failures: 5
+  reset_timeout: 60s
