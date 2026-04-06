@@ -36,7 +36,6 @@ func (r *Redis) Close() error {
 	return r.client.Close()
 }
 
-// TaskCache wraps Redis for task caching
 type TaskCache struct {
 	redis *Redis
 	ttl   time.Duration
